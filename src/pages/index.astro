@@ -13,7 +13,7 @@ import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
-  title: 'AstroWind — Free template for creating websites with Astro + Tailwind CSS',
+  title: 'Sivo - Streamlining ordering for suppliers and venues',
   ignoreTitleTemplate: true,
 };
 ---
@@ -25,28 +25,25 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/onwidget/astrowind',
+        text: 'Get Started',
+        href: 'https://sivo.in',
         target: '_blank',
-        icon: 'tabler:download',
       },
       { text: 'Learn more', href: '#features' },
     ]}
     image={{ src: '~/assets/images/hero-image.png', alt: 'AstroWind Hero Image' }}
   >
     <Fragment slot="title">
-       We digitize, simplify, automate <span class="hidden xl:inline"> and make your hospitality</span>
+       We digitize, simplify, automate <span class="hidden xl:inline"> and make your </span>
       <span class="text-accent dark:text-white highlight"> orders smart </span>
     </Fragment>
 
     <Fragment slot="subtitle">
       <span class="hidden sm:inline">
-        <span class="font-semibold">AstroWind</span> is a free, customizable and production-ready template for Astro 5.0
-        + Tailwind CSS.</span
+        <span class="font-semibold">Sivo</span> is an all-in-one solution for venues order management.</span
       >
       <span class="block mb-1 sm:hidden font-bold text-blue-600">AstroWind: Production-ready.</span>
-      Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages &
-      Blogs.
+      Restaurant groups and venues that choose Sivo are looking to simplify ordering, streamline internal processes, and cut costs across all locations
     </Fragment>
   </Hero>
 
@@ -59,45 +56,33 @@ const metadata = {
   <Features
     id="features"
     tagline="Features"
-    title="What you get with AstroWind"
-    subtitle="One of the most professional and comprehensive templates currently on the market. Most starred & forked Astro theme in 2022, 2023 and 2024."
+    title="YOUR ORDER ISOUR CUP OF TEA"
+    subtitle="We help restaurants and suppliers manage food supply orders, end to end."
     items={[
       {
-        title: 'Astro + Tailwind CSS Integration',
+        title: 'ORDER FASTER & BETTER',
         description:
-          'A seamless integration between two great frameworks that offer high productivity, performance and versatility.',
+          'Reduce order errors by 80% and save 2 hours of your time daily by placing all your orders in Sivo mobile app.',
         icon: 'tabler:brand-tailwind',
       },
       {
-        title: 'Ready-to-use Components',
+        title: 'PUMP UP YOUR PROFITS',
         description:
-          'Widgets made with Tailwind CSS ready to be used in Marketing Websites, SaaS, Blogs, Personal Profiles, Small Business...',
+          'Save money from managing your digital catalogs, down to getting the best payment terms.',
         icon: 'tabler:components',
       },
       {
-        title: 'Best Practices',
+        title: 'DISH OUT THE WASTE',
         description:
-          'Creating secure, efficient, and user-friendly websites that deliver exceptional experiences and lasting value.',
+          'Avoid 20% of waste thanks to SIVO advanced analytical tools.',
         icon: 'tabler:list-check',
       },
       {
-        title: 'Excellent Page Speed',
+        title: 'Get started in no time',
         description:
           'Having a good page speed impacts organic search ranking, improves user experience (UI/UX) and increase conversion rates.',
         icon: 'tabler:rocket',
-      },
-      {
-        title: 'Search Engine Optimization (SEO)',
-        description:
-          "SEO lies in its ability to enhance a website's visibility, driving organic traffic and enabling it to reach a wider audience.",
-        icon: 'tabler:arrows-right-left',
-      },
-      {
-        title: 'Open to new ideas and contributions',
-        description:
-          'Embracing a culture that is open to new ideas and contributions is integral fostering innovation, collaboration, and a dynamic user experience.',
-        icon: 'tabler:bulb',
-      },
+      }
     ]}
   />
 
@@ -105,23 +90,20 @@ const metadata = {
 
   <Content
     isReversed
-    tagline="Inside template"
-    title="AstroWind's Blueprint: Fun Meets Functionality!"
+    tagline="Inside Sivo"
+    title="ONE APP FOR ALL YOUR CUSTOMERS NEEDS."
     items={[
       {
-        title: 'Built on top of Astro 5.0',
-        description:
-          'Benefiting from the performance and developer-friendly features of this modern static site generator.',
+        title: 'Send orders to all your suppliers'
       },
       {
-        title: 'Styled using Tailwind CSS',
-        description:
-          'Facilitating rapid design and consistent styling with this highly popular utility-first CSS framework.',
+        title: 'Chat with distributors'
       },
       {
-        title: 'Cross-browser compatibility',
-        description:
-          'Ensure your website looks and functions consistently across various web browsers, delivering a seamless experience to all users.',
+        title: 'Access to entire catalog with pictures',
+      },
+      {
+        title: 'Team management',
       },
     ]}
     image={{
