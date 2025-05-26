@@ -21,17 +21,17 @@ For the purposes of these Terms and Conditions:
 
 - **Country** refers to: California, United States
 
-- **Company** (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to AstroWind LLC, 1 Cupertino, CA 95014.
+- **Company** (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to Sivo Inc. [Your Address Here, e.g., 123 Sivo Way, Tech City, CA 90210].
 
 - **Device** means any device that can access the Service such as a computer, a cellphone or a digital tablet.
 
 - **Service** refers to the Website.
 
-- **Terms and Conditions** (also referred as "Terms") mean these Terms and Conditions that form the entire agreement between You and the Company regarding the use of the Service. This Terms and Conditions agreement is a Demo.
+- **Terms and Conditions** (also referred as "Terms") mean these Terms and Conditions that form the entire agreement between You and the Company regarding the use of the Service.
 
 - **Third-party Social Media Service** means any services or content (including data, information, products or services) provided by a third-party that may be displayed, included or made available by the Service.
 
-- **Website** refers to AstroWind, accessible from [https://astrowind.vercel.app](https://astrowind.vercel.app)
+- **Website** refers to Sivo, accessible from [https://sivo.in](https://sivo.in)  <!-- Replace with your actual domain -->
 
 - **You** means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.
 
@@ -117,4 +117,4 @@ By continuing to access or use Our Service after those revisions become effectiv
 
 If you have any questions about these Terms and Conditions, You can contact us:
 
-- By email: somecoolemail@domain.com
+- By email: legal@sivo.com <!-- Replace with your actual legal contact email -->

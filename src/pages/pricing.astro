@@ -8,7 +8,7 @@ import Features3 from '~/components/widgets/Features3.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
-  title: 'Pricing',
+  title: 'Sivo Pricing | Plans for Venues & Suppliers',
 };
 ---
 
@@ -17,94 +17,132 @@ const metadata = {
 
   <HeroText
     tagline="Pricing"
-    title="Stellar Pricing for Every Journey"
-    subtitle="Choose the perfect plan that aligns with your cosmic goals."
+    title="Simple, Transparent Pricing for Your Business"
+    subtitle="Choose a plan that fits your needs, whether you're a small cafe or a large supplier network. All plans include core Sivo features and dedicated support."
   />
 
   <!-- Pricing Widget ******************* -->
-
+  <!-- Section for Venue Pricing -->
   <Prices
-    title="Our prices"
-    subtitle="Only pay for what you need"
+    title="Pricing for Venues"
+    subtitle="Streamline your ordering and manage your kitchen efficiently."
     prices={[
       {
-        title: 'basic',
-        subtitle: 'Optimal choice for personal use',
-        price: 29,
+        title: 'Venue Starter',
+        subtitle: 'Perfect for single locations and small teams.',
+        price: 49, // Example price
+        period: 'per month, per location',
+        items: [
+          { description: 'Order from unlimited suppliers' },
+          { description: 'Up to 5 users' },
+          { description: 'Basic inventory tracking' },
+          { description: 'Standard reporting' },
+        ],
+        callToAction: { text: 'Get Started', href: '/signup/venue-starter' },
+      },
+      {
+        title: 'Venue Pro',
+        subtitle: 'For growing businesses and multiple locations.',
+        price: 99, // Example price
+        period: 'per month, per location',
+        items: [
+          { description: 'All Starter features, plus:' },
+          { description: 'Up to 20 users' },
+          { description: 'Advanced inventory & recipe costing' },
+          { description: 'Customizable reports & analytics' },
+          { description: 'Multi-location management' },
+        ],
+        callToAction: { text: 'Choose Pro', href: '/signup/venue-pro' },
+        hasRibbon: true,
+        ribbonTitle: 'Most Popular',
+      },
+      {
+        title: 'Venue Enterprise',
+        subtitle: 'Tailored solutions for large chains and groups.',
+        price: 'Custom', // B2B often has custom pricing
+        period: 'Contact Us',
+        items: [
+          { description: 'All Pro features, plus:' },
+          { description: 'Unlimited users & locations' },
+          { description: 'Dedicated account manager' },
+          { description: 'API access & custom integrations' },
+          { description: 'SLA & premium support' },
+        ],
+        callToAction: { text: 'Contact Sales', href: '/contact?inquiry=enterprise' },
+      },
+    ]}
+  />
+
+  <!-- Section for Supplier Pricing -->
+   <Prices
+    title="Pricing for Suppliers"
+    subtitle="Expand your reach and manage wholesale orders with ease."
+    classes={{ container: 'pt-8 md:pt-12' }}
+    prices={[
+      {
+        title: 'Supplier Growth',
+        subtitle: 'Ideal for suppliers building their network.',
+        price: 79, // Example price
         period: 'per month',
         items: [
           {
-            description: 'Etiam in libero, et volutpat',
+            description: 'Digital product catalog'
           },
           {
-            description: 'Aenean ac nunc dolor tristique',
+            description: 'Manage up to 50 venue connections'
           },
           {
-            description: 'Cras scelerisque accumsan lib',
+            description: 'Order management dashboard'
           },
           {
-            description: 'In hac habitasse',
+            description: 'Basic sales analytics'
           },
         ],
         callToAction: {
-          target: '_blank',
-          text: 'Get started',
-          href: '#',
-        },
-      },
-      {
-        title: 'standard',
-        subtitle: 'Optimal choice for small teams',
-        price: 69,
-        period: 'Per Month',
-        items: [
-          {
-            description: 'Proin vel laoreet',
-          },
-          {
-            description: 'Ut efficitur habitasse egestas',
-          },
-          {
-            description: 'Volutpat hac curabitur',
-          },
-          {
-            description: 'Pellentesque blandit ut nibh',
-          },
-          {
-            description: 'Donec fringilla sem',
-          },
-        ],
-        callToAction: {
-          target: '_blank',
-          text: 'Get started',
-          href: '#',
+          text: 'Start Growing',
+          href: '/signup/supplier-growth',
         },
         hasRibbon: true,
         ribbonTitle: 'popular',
       },
       {
-        title: 'premium',
-        subtitle: 'Optimal choice for companies',
-        price: 199,
-        period: 'Per Month',
+        title: 'Supplier Pro',
+        subtitle: 'For established suppliers with larger client bases.',
+        price: 149, // Example price
+        period: 'per month',
         items: [
           {
-            description: 'Curabitur suscipit risus',
+            description: 'All Growth features, plus:'
           },
           {
-            description: 'Aliquam habitasse malesuada',
+            description: 'Unlimited venue connections'
           },
           {
-            description: 'Suspendisse sit amet blandit',
+            description: 'Advanced sales & customer analytics'
           },
           {
-            description: 'Suspendisse auctor blandit dui',
+            description: 'Promotional tools & features'
           },
         ],
         callToAction: {
-          target: '_blank',
-          text: 'Get started',
-          href: '#',
+          text: 'Go Pro',
+          href: '/signup/supplier-pro',
+        },
+      },
+      {
+        title: 'Supplier Enterprise',
+        subtitle: 'Custom solutions for large distributors and producers.',
+        price: 'Custom',
+        period: 'Contact Us',
+        items: [
+          { description: 'All Pro features, plus:' },
+          { description: 'Multi-warehouse support' },
+          { description: 'Custom branding & integrations' },
+          { description: 'Dedicated support & onboarding' },
+        ],
+        callToAction: {
+          text: 'Contact Sales',
+          href: '/contact?inquiry=supplier-enterprise',
         },
       },
     ]}
@@ -113,38 +151,38 @@ const metadata = {
   <!-- Features3 Widget ************** -->
 
   <Features3
-    title="Price-related features"
-    subtitle="Discover the advantages of choosing our plans"
+    title="All Sivo Plans Include"
+    subtitle="Core features and benefits you get with every Sivo subscription."
     columns={2}
     items={[
       {
-        title: 'Tiered Pricing Plans',
-        description: 'Choose from a range of pricing plans designed to accommodate different budgets and requirements.',
-        icon: 'tabler:stairs',
+        title: 'Secure Cloud Platform',
+        description: 'Your data is safe and accessible anytime, anywhere.',
+        icon: 'tabler:cloud-lock',
       },
       {
-        title: 'Transparent Pricing',
-        description: 'Clearly displayed pricing details for each plan, with no hidden costs or unexpected charges.',
-        icon: 'tabler:flip-vertical',
+        title: 'Mobile & Web Access',
+        description: 'Manage your business on the go or from your desktop.',
+        icon: 'tabler:devices',
       },
       {
-        title: 'Secure Payment Methods',
-        description: 'Secure payment gateways to protect your financial information during transactions.',
-        icon: 'tabler:shield-lock',
+        title: 'Regular Feature Updates',
+        description: 'We continuously improve Sivo with new features and enhancements.',
+        icon: 'tabler:refresh-dot',
       },
       {
-        title: 'Instant Access',
-        description: `Immediate access to your chosen plan's features and templates upon subscription.`,
-        icon: 'tabler:accessible',
+        title: 'Standard Customer Support',
+        description: `Access our help center and email support for any questions.`,
+        icon: 'tabler:lifebuoy',
       },
       {
-        title: 'Upgrade Value',
-        description: 'Upgrade to higher-tier plans to unlock more features and benefits for an enhanced experience.',
+        title: 'Easy Onboarding',
+        description: 'Get started quickly with our intuitive interface and helpful guides.',
         icon: 'tabler:chevrons-up',
       },
       {
-        title: '24H support',
-        description: 'Questions answered via live chat, email or phone, every calendar day.',
+        title: 'No Long-Term Contracts',
+        description: 'Flexible monthly billing. Cancel or change your plan anytime.',
         icon: 'tabler:headset',
       },
     ]}
@@ -154,42 +192,39 @@ const metadata = {
   <!-- Steps Widget ****************** -->
 
   <Steps
-    title="A guided journey from plans to creativity"
-    tagline="simplified process"
+    title="How to Get Started with Your Sivo Plan"
+    tagline="Simple Onboarding Process"
     isReversed={true}
     items={[
       {
-        title: 'Explore plans',
+        title: 'Choose Your Role',
+        description: 'Select whether you are signing up as a Venue or a Supplier.',
         icon: 'tabler:number-1',
       },
       {
-        title: 'Select a plan',
+        title: 'Select Your Plan',
+        description: 'Pick the pricing plan that best fits your business size and needs.',
         icon: 'tabler:number-2',
       },
       {
-        title: 'Sign Up / Log In',
+        title: 'Create Your Account',
+        description: 'Provide your business details and create your Sivo login.',
         icon: 'tabler:number-3',
       },
       {
-        title: 'Review order',
+        title: 'Complete Onboarding',
+        description: 'Follow our simple setup steps to configure your account, connect with partners, or set up your catalog.',
         icon: 'tabler:number-4',
       },
       {
-        title: 'Enter payment details',
+        title: 'Start Streamlining!',
+        description: 'Begin using Sivo to manage your orders, inventory, and supplier/venue relationships.',
         icon: 'tabler:number-5',
-      },
-      {
-        title: 'Confirmation',
-        icon: 'tabler:number-6',
-      },
-      {
-        title: 'Download and start using the template(s)',
-        icon: 'tabler:number-7',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1536816579748-4ecb3f03d72a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
-      alt: 'Steps image',
+      src: '~/assets/images/sivo-signup-process.png', // Suggestion: Replace with an image illustrating the signup/onboarding flow
+      alt: 'Sivo Onboarding Steps',
     }}
   />
 
@@ -197,33 +232,33 @@ const metadata = {
 
   <FAQs
     title="Pricing FAQs"
-    subtitle="Choosing the right plan is important, and we're here to answer your questions. If you have queries about our pricing options, you're in the right place."
+    subtitle="Common questions about Sivo's pricing plans. If you don't find your answer here, please contact us."
     columns={1}
     items={[
       {
-        title: 'Do the plans come with customer support?',
+        title: 'Can I try Sivo before committing to a plan?',
         description:
-          'Absolutely, all plans include access to our dedicated customer support to assist you with any queries or concerns.',
+          'Yes! We offer a free demo of Sivo so you can see its features in action. For some plans, a limited trial period may be available. Contact sales for more information.',
       },
       {
-        title: 'Is there a trial period for the different plans?',
+        title: 'Are there any setup fees or hidden costs?',
         description:
-          "Unfortunately, we don't offer trial periods for the plans. However, you can check out our demo section to preview the quality of our templates.",
+          "Our pricing is transparent. There are no hidden fees. Some enterprise plans with custom integrations might have a one-time setup fee, which will be clearly communicated.",
       },
       {
-        title: 'Can I switch between plans?',
+        title: 'Can I change my plan later?',
         description:
-          'Certainly! You can easily upgrade or downgrade your plan, at any time, to find the one that best suits your evolving requirements.',
+          'Absolutely. You can upgrade or downgrade your plan at any time to better suit your business needs as they change.',
       },
       {
         title: 'What payment methods do you accept?',
         description:
-          'We accept major credit cards and online payment methods to ensure a convenient and secure transaction process.',
+          'We accept all major credit cards. For enterprise plans, we also support bank transfers and other payment methods.',
       },
       {
-        title: 'Are there any hidden fees beyond the displayed cost?',
+        title: 'Is there a discount for annual billing?',
         description:
-          'No, the subscription cost covers all the features and templates listed under each plan. There are no hidden fees or extra charges.',
+          'Yes, we typically offer a discount for businesses that choose to pay annually. Please check the plan details or contact sales.',
       },
     ]}
   />
@@ -231,13 +266,13 @@ const metadata = {
   <!-- CallToAction Widget *********** -->
 
   <CallToAction
-    title="Ready to boost your projects?"
-    subtitle="Join our community of satisfied customers who have transformed their work with our templates."
+    title="Ready to Find the Perfect Sivo Plan?"
+    subtitle="Take control of your wholesale ordering and unlock new efficiencies for your business."
     actions={[
       {
         variant: 'primary',
-        text: 'Get started now',
-        href: '/',
+        text: 'Request a Demo',
+        href: '/contact',
       },
     ]}
   />

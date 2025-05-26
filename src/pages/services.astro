@@ -7,7 +7,7 @@ import Testimonials from '~/components/widgets/Testimonials.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
-  title: 'Services',
+  title: 'Sivo Services | Solutions for Venues & Suppliers',
 };
 ---
 
@@ -16,114 +16,141 @@ const metadata = {
 
   <Hero
     tagline="Services"
-    title="Elevate your projects with our stunning templates"
-    subtitle="Explore our meticulously crafted templates tailored to various industries and purposes. From captivating presentations to functional website designs, we offer the tools you need to succeed."
-    actions={[{ variant: 'primary', target: '_blank', text: 'Start exploring', href: '/' }]}
+    title="The Sivo Platform: Built for Your Business"
+    subtitle="Discover how Sivo's comprehensive suite of features empowers restaurants, cafes, hotels, and their suppliers to optimize ordering, manage inventory, and grow their business."
+    actions={[{ variant: 'primary', text: 'Request a Demo', href: '/contact?demo=true' }]}
     image={{
-      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
-      alt: 'AstroWind Hero Image',
+      src: '~/assets/images/sivo-services-overview.png', // Suggestion: Replace with an image showing diverse users or platform benefits
+      alt: 'Sivo Platform Services Overview',
     }}
   />
 
   <!-- Features2 Widget ************** -->
 
   <Features2
-    title="Explore our diverse templates"
-    subtitle="Discover our selection below to streamline and elevate your projects."
+    id="venues"
+    title="Empowering Venues"
+    subtitle="Streamline your procurement and kitchen operations with Sivo."
     columns={3}
     items={[
       {
-        title: 'Educational',
-        description:
-          'By harmonizing instructional design and visual appeal, templates streamline content creation for varied materials, expediting development and cultivating engaging educational spaces.',
-        icon: 'tabler:school',
+        title: 'Centralized Ordering',
+        description: 'Order from all your suppliers in one app. Ditch the late-night calls, texts, and emails. Save hours every week.',
+        icon: 'tabler:apps',
       },
       {
-        title: 'Interior Design',
-        description:
-          'Crafting functional, visually appealing spaces for residential and commercial use. Templates emphasize layout, colors, and furniture setups, offering a versatile toolkit for your design vision.',
-        icon: 'tabler:home-star',
+        title: 'Real-time Order Tracking',
+        description: 'Know the status of your orders from confirmation to delivery. Reduce uncertainty and plan better.',
+        icon: 'tabler:map-pin-search',
       },
       {
-        title: 'Photography',
-        description: `Empowering photographers, our templates facilitate captivating storytelling. With a keen focus on layout, galleries, and typography, they cater to both professionals and enthusiasts.`,
-        icon: 'tabler:photo',
+        title: 'Inventory Management Tools',
+        description: `(Coming Soon) Smart tools to help you track stock, reduce waste, and avoid costly 86'd items.`,
+        icon: 'tabler:clipboard-list',
       },
       {
-        title: 'E-commerce',
-        description:
-          'Developing engaging online stores, our E-commerce templates ensure a dynamic presence to effectively showcase products. Ideal for startups or revamps.',
-        icon: 'tabler:shopping-cart',
+        title: 'Team Collaboration',
+        description: 'Involve your whole team. Manage orders, approvals, and communications seamlessly in one place.',
+        icon: 'tabler:users',
       },
       {
-        title: 'Blog',
-        description:
-          'With attention to typography, these templates empower effective content presentation for writers at any stage, ensuring visually engaging and user-friendly blogs.',
-        icon: 'tabler:article',
+        title: 'Reporting & Analytics',
+        description: 'Understand your spending, track price changes, and identify savings opportunities with clear reports.',
+        icon: 'tabler:analyze',
       },
       {
-        title: 'Business',
-        description:
-          'Providing polished options for effective visual communication, these templates empower both startups and established companies for a professional brand presence.',
-        icon: 'tabler:building-store',
-      },
-      {
-        title: 'Branding',
-        description:
-          'Offering pre-designed elements for a consistent brand identity, including logos and marketing materials. Ideal for new ventures or revamps.',
-        icon: 'tabler:arrow-big-up-lines',
-      },
-      {
-        title: 'Medical',
-        description: `From presentations to patient forms, these tools enhance communication effectiveness for healthcare professionals. Ideal for medical practices and research pursuits.`,
-        icon: 'tabler:vaccine',
-      },
-      {
-        title: 'Fashion Design',
-        description:
-          'With attention to detail, customization, and contemporary design, they empower designers to showcase ideas cohesively. Ideal for all levels of designers.',
-        icon: 'tabler:tie',
+        title: 'Easy Reordering',
+        description: 'Reorder your usuals in a few clicks. Create custom order lists for even faster purchasing.',
+        icon: 'tabler:refresh-dot',
       },
     ]}
   />
 
-  <!-- Content Widget **************** -->
+  <!-- Features2 Widget for Suppliers -->
+  <Features2
+    id="suppliers"
+    title="Driving Growth for Suppliers"
+    subtitle="Expand your customer base and streamline your wholesale operations."
+    columns={3}
+    isDark={true}
+    classes={{ headline: { title: 'text-black', subtitle: 'text-slate-700' } }}
+    items={[
+      {
+        title: 'Digital Product Catalog',
+        description: 'Showcase your full range of products with high-quality images, detailed descriptions, and pricing tiers.',
+        icon: 'tabler:notebook',
+      },
+      {
+        title: 'Efficient Order Management',
+        description: 'Receive all orders digitally in one organized dashboard. Reduce manual entry and errors.',
+        icon: 'tabler:file-check',
+      },
+      {
+        title: 'Direct Communication with Venues',
+        description: 'Chat directly with your customers for order clarifications, new product announcements, and promotions.',
+        icon: 'tabler:message-circle',
+      },
+      {
+        title: 'Customer Relationship Management',
+        description: 'Manage all your venue customers, their order history, and preferences in one place.',
+        icon: 'tabler:address-book',
+      },
+      {
+        title: 'Sales & Performance Analytics',
+        description: 'Track your sales, identify popular items, and understand customer trends to grow your business.',
+        icon: 'tabler:chart-bar',
+      },
+      {
+        title: 'Route & Delivery Optimization',
+        description: '(Coming Soon) Plan delivery routes efficiently and provide real-time delivery updates to your customers.',
+        icon: 'tabler:route-2',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-slate-800"></div>
+    </Fragment>
+  </Features2>
 
   <Content
     isReversed
+    id="features"
+    tagline="Platform Highlights"
+    title="Key Sivo Platform Features"
     items={[
       {
-        title: 'High-Quality Designs',
+        title: 'Mobile-First & Web Accessible',
         description:
-          'Our templates feature top-tier designs that ensure a professional and polished appearance for your projects.',
-        icon: 'tabler:wand',
+          'Access Sivo anytime, anywhere, on any device. Perfect for busy kitchens and on-the-go suppliers.',
+        icon: 'tabler:devices-pc',
       },
       {
-        title: 'Customization Tools',
+        title: 'Secure & Reliable',
         description:
-          'Tailor each template to your unique needs with user-friendly customization tools that let you personalize colors, fonts, and content.',
-        icon: 'tabler:settings',
+          'Your data is protected with industry-leading security. Count on Sivo for dependable performance.',
+        icon: 'tabler:shield-lock',
       },
       {
-        title: 'Pre-Designed Elements',
+        title: 'Intuitive User Interface',
         description:
-          'Save time and effort with our ready-to-use elements, including graphics, icons, and layouts that enhance the visual appeal of your creations.',
-        icon: 'tabler:presentation',
+          'Designed for ease of use, Sivo requires minimal training for you and your team to get started.',
+        icon: 'tabler:ease-in-control-point',
       },
       {
-        title: 'Preview and Mockup Views',
+        title: 'Dedicated Customer Support',
         description:
-          'Visualize the final outcome before making any changes using our preview and mockup views, ensuring your projects meet your expectations.',
-        icon: 'tabler:carousel-horizontal',
+          'Our expert team is here to help you with onboarding, training, and any questions you may have.',
+        icon: 'tabler:headset',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1525909002-1b05e0c869d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
-      alt: 'Features Image',
+      src: '~/assets/images/sivo-platform-features.jpg', // Suggestion: Replace with a compelling image of the platform in use
+      alt: 'Sivo Platform Interface',
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Main Features</h3>
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">The Sivo Difference</h3>
+      We've built Sivo from the ground up to address the unique challenges of the F&B wholesale industry.
     </Fragment>
   </Content>
 
@@ -131,35 +158,37 @@ const metadata = {
 
   <Content
     isAfterContent
+    tagline="Tangible Results"
+    title="Benefits of Using Sivo"
     items={[
       {
-        title: 'Time Savings',
+        title: 'Significant Time Savings',
         description:
-          'Streamline your workflow, enabling you to create stunning materials efficiently and allocate more time to your core tasks.',
+          'Slash hours spent on phone calls, text messages, and manual data entry each week.',
         icon: 'tabler:clock',
       },
       {
-        title: 'Professional Appearance',
+        title: 'Reduced Order Errors',
         description:
-          'Elevate your projects with the polished and sophisticated look that our templates provide, making a lasting impression on your audience.',
-        icon: 'tabler:school',
+          'Digital orders mean fewer misunderstandings and costly mistakes. Get exactly what you ordered.',
+        icon: 'tabler:circle-check',
       },
       {
-        title: 'Cost-Efficiency',
+        title: 'Improved Cost Control & Reduced Waste',
         description:
-          'Benefit from cost savings by avoiding the need for custom design work, as our templates offer professional-grade designs at a fraction of the cost.',
+          'Clearer spending insights and better inventory management lead to less waste and improved profit margins.',
         icon: 'tabler:coin',
       },
       {
-        title: 'Instant Download',
+        title: 'Stronger Supplier Relationships',
         description:
-          'Enjoy immediate access to your chosen templates upon purchase, enabling you to begin working on your projects without delay.',
-        icon: 'tabler:file-download',
+          'Transparent, efficient communication and ordering build trust and stronger partnerships.',
+        icon: 'tabler:users-group',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1552664688-cf412ec27db2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-      alt: 'Benefits Image',
+      src: '~/assets/images/sivo-benefits-graphic.png', // Suggestion: Replace with an infographic or illustrative image
+      alt: 'Benefits of Sivo Platform',
     }}
   >
     <Fragment slot="content">
@@ -170,40 +199,39 @@ const metadata = {
   <!-- Testimonials Widget *********** -->
 
   <Testimonials
-    title="Words from real customers"
+    title="What Our Clients Say About Sivo"
     testimonials={[
       {
-        testimonial: `The designs are not only visually appealing but also highly professional. The templates have saved me a significant amount of time while helping me make a lasting impression on my clients.`,
-        name: 'Emily Kennedy',
-        job: 'Front-end developer',
+        testimonial: `Sivo has transformed our ordering process. What used to take hours now takes minutes. The accuracy has improved dramatically, and our team loves how easy it is to use.`,
+        name: 'Chef Maria Rodriguez',
+        job: 'Head Chef, The Gourmet Spot',
         image: {
-          src: 'https://images.unsplash.com/photo-1618835962148-cf177563c6c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=930&q=80',
-          alt: 'Emily Kennedy Image',
+          src: '~/assets/images/testimonial-chef-maria.jpg', // Suggestion: Replace with actual or stock client photos
+          alt: 'Chef Maria Rodriguez',
         },
       },
       {
-        testimonial: `It beautifully showcases my work, with its clean and elegant design that lets my photographs shine. Customization was a breeze, even for a non-tech person like me. The result is a professional and immersive portfolio that's garnered numerous compliments.`,
-        name: 'Sarah Hansen',
-        job: 'Photographer',
+        testimonial: `Since using Sivo, managing orders from our restaurant clients is a breeze. The digital catalog is a game-changer, and our efficiency has skyrocketed.`,
+        name: 'John Davis',
+        job: 'Sales Manager, FreshProduce Co.',
         image: {
-          src: 'https://images.unsplash.com/photo-1561406636-b80293969660?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-          alt: 'Sarah Hansen Image',
+          src: '~/assets/images/testimonial-john-davis.jpg', // Suggestion: Replace
+          alt: 'John Davis',
         },
       },
       {
-        testimonial: `I discovered these templates and I'm impressed by their variety and quality. They've helped me establish a consistent brand image across my marketing and social platforms, elevating my business's overall appearance.`,
-        name: 'Mark Wilkinson',
-        job: 'Small business owner',
+        testimonial: `We've cut down on ordering mistakes and saved so much time since switching to Sivo. Our suppliers are happier too! Highly recommend for any busy kitchen.`,
+        name: 'Lisa Chen',
+        job: 'General Manager, Urban Cafe Group',
         image: {
-          src: 'https://images.unsplash.com/photo-1545167622-3a6ac756afa4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=824&q=80',
-          alt: 'Mark Wilkinson Image',
+          src: '~/assets/images/testimonial-lisa-chen.jpg', // Suggestion: Replace
+          alt: 'Lisa Chen',
         },
       },
     ]}
     callToAction={{
-      target: '_blank',
-      text: 'More testimonials...',
-      href: 'https://github.com/onwidget/astrowind',
+      text: 'See More Success Stories',
+      href: '/case-studies', // Example: if you have a case studies page
       icon: 'tabler:chevron-right',
     }}
   />
@@ -214,11 +242,11 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        text: 'Start exploring',
-        href: '/',
+        text: 'Request Your Free Demo',
+        href: '/contact?demo=true',
       },
     ]}
-    title="Dive into our template collection"
-    subtitle="Whether you're in business, design, or education, our templates are here to elevate your projects."
+    title="Ready to Transform Your Wholesale Operations?"
+    subtitle="See how Sivo can save you time, reduce costs, and help your business thrive. Get started today!"
   />
 </Layout>

@@ -22,11 +22,15 @@ if (props.alt === undefined || props.alt === null) {
 }
 
 if (typeof props.width === 'string') {
-  props.width = parseInt(props.width);
+  const parsedWidth = parseInt(props.width, 10);
+  // If parseInt results in NaN (e.g., for "auto"), set to undefined.
+  // Otherwise, use the parsed number.
+  props.width = isNaN(parsedWidth) ? undefined : parsedWidth;
 }
 
 if (typeof props.height === 'string') {
-  props.height = parseInt(props.height);
+  const parsedHeight = parseInt(props.height, 10);
+  props.height = isNaN(parsedHeight) ? undefined : parsedHeight;
 }
 
 if (!props.loading) {

@@ -4,16 +4,22 @@ import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
-import Features2 from '~/components/widgets/Features2.astro';
+import Hero2 from '~/components/widgets/Hero2.astro'; // Import Hero2
 import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import { Icon } from 'astro-icon/components';
+import Button from '~/components/ui/Button.astro'; // Ensure Button is imported
+import Image from '~/components/common/Image.astro'; // Ensure Image is imported
+
+import appStoreBadge from '~/assets/images/app-store.png';
+import googlePlayBadge from '~/assets/images/google-play.png';
 
 const metadata = {
-  title: 'Sivo - Streamlining ordering for suppliers and venues',
+  title: 'Sivo - Wholesale Ordering, Simplified',
   ignoreTitleTemplate: true,
 };
 ---
@@ -25,95 +31,121 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        text: 'Get Started',
-        href: 'https://sivo.in',
-        target: '_blank',
+        text: 'Request a Demo',
+        href: '/contact?demo=true',
+        // target: '_blank', // Keep internal unless it's an external demo link
       },
       { text: 'Learn more', href: '#features' },
     ]}
-    image={{ src: '~/assets/images/hero-image.png', alt: 'AstroWind Hero Image' }}
+    image={{ src: '~/assets/images/sivo-hero-platform-showcase.png', alt: 'Sivo Platform on Tablet and Phone' }}
   >
     <Fragment slot="title">
-       We digitize, simplify, automate <span class="hidden xl:inline"> and make your </span>
-      <span class="text-accent dark:text-white highlight"> orders smart </span>
+      The Smart Way to Order <span class="hidden xl:inline"> for </span>
+      <span class="text-accent dark:text-white highlight"> Wholesale Orders </span>
     </Fragment>
 
     <Fragment slot="subtitle">
       <span class="hidden sm:inline">
-        <span class="font-semibold">Sivo</span> is an all-in-one solution for venues order management.</span
+        <span class="font-semibold">Sivo</span> is the all-in-one platform connecting venues and suppliers for effortless ordering, inventory management, and streamlined communication.</span
       >
-      <span class="block mb-1 sm:hidden font-bold text-blue-600">AstroWind: Production-ready.</span>
-      Restaurant groups and venues that choose Sivo are looking to simplify ordering, streamline internal processes, and cut costs across all locations
+      Trusted by restaurants, cafes, hotels, and their suppliers to digitize operations, reduce errors, and boost profitability.
     </Fragment>
   </Hero>
 
   <!-- Note Widget ******************* -->
-
-  <Note />
+  
+  <Note>
+    <Fragment slot="default">
+      <span class="font-bold">
+        <Icon name="tabler:info-square" class="w-5 h-5 inline-block align-text-bottom" /> Trusted by Industry Leaders:
+      </span> Join hundreds of businesses revolutionizing their ordering with Sivo.
+    </Fragment>
+  </Note>
 
   <!-- Features Widget *************** -->
 
   <Features
     id="features"
-    tagline="Features"
-    title="YOUR ORDER ISOUR CUP OF TEA"
-    subtitle="We help restaurants and suppliers manage food supply orders, end to end."
+    tagline="Why Sivo?"
+    title="Why Choose Sivo?"
+    subtitle="Sivo streamlines your entire wholesale ordering process, saving you time, money, and headaches."
     items={[
       {
-        title: 'ORDER FASTER & BETTER',
+        title: 'Effortless Ordering',
         description:
-          'Reduce order errors by 80% and save 2 hours of your time daily by placing all your orders in Sivo mobile app.',
-        icon: 'tabler:brand-tailwind',
+          'For Venues: Order from all your suppliers in one place. No more calls, texts, or emails. Just simple, fast ordering.',
+        icon: 'tabler:device-mobile-rotated',
       },
       {
-        title: 'PUMP UP YOUR PROFITS',
+        title: 'Streamlined Supplier Management',
         description:
-          'Save money from managing your digital catalogs, down to getting the best payment terms.',
-        icon: 'tabler:components',
+          'For Suppliers: Receive all orders digitally, manage your product catalog with ease, and communicate directly with your customers.',
+        icon: 'tabler:truck-delivery',
       },
       {
-        title: 'DISH OUT THE WASTE',
+        title: 'Boost Profitability',
         description:
-          'Avoid 20% of waste thanks to SIVO advanced analytical tools.',
-        icon: 'tabler:list-check',
+          'Reduce order errors, minimize food waste, and get clear insights into your spending and sales to improve your bottom line.',
+        icon: 'tabler:chart-infographic',
       },
       {
-        title: 'Get started in no time',
+        title: 'Real-time Communication',
         description:
-          'Having a good page speed impacts organic search ranking, improves user experience (UI/UX) and increase conversion rates.',
+          'Chat directly with your suppliers or venues within the app. Get instant updates and resolve issues quickly.',
         icon: 'tabler:rocket',
       }
     ]}
   />
 
-  <!-- Content Widget **************** -->
+  <!-- Download App Section (Hero2 Widget) ******************* -->
+  <Hero2
+    id="download-app"
+    tagline="Sivo On The Go"
+    title="Manage Your Orders, Anywhere."
+    subtitle="Download the Sivo mobile app to place orders, chat with suppliers, and track deliveries seamlessly from your phone or tablet."
+    image={{
+      src: '~/assets/images/sivo-home-page.png',
+      size : 'small',
+      alt: 'Sivo mobile app on phone and tablet',
+    }}
+  >
+    <Fragment slot="actions">
+      <Button variant="link" href="#" target="_blank" class="w-full sm:w-auto"> {/* Replace # with actual App Store link */}
+        <Image src={appStoreBadge} alt="Download on the App Store" width={180} height={60} loading="lazy"/>
+      </Button>
+      <Button variant="link" href="#" target="_blank" class="w-full sm:w-auto"> {/* Replace # with actual Google Play link */}
+        <Image src={googlePlayBadge} alt="Get it on Google Play" width={180} height={60} loading="lazy"/>
+      </Button>
+    </Fragment>
+  </Hero2>
 
+  <!-- Content Widget **************** -->
   <Content
     isReversed
     tagline="Inside Sivo"
-    title="ONE APP FOR ALL YOUR CUSTOMERS NEEDS."
+    title="One App for All Your Ordering Needs"
     items={[
       {
         title: 'Send orders to all your suppliers'
       },
       {
-        title: 'Chat with distributors'
+        title: 'Chat with suppliers & team members'
       },
       {
-        title: 'Access to entire catalog with pictures',
+        title: 'Access entire supplier catalogs with images',
       },
       {
-        title: 'Team management',
+        title: 'Manage orders and approvals across your team',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Colorful Image',
+      src: '~/assets/images/sivo-venue-dashboard.png', // Suggestion: Replace with an image of a venue dashboard or chef using the app
+      alt: 'Sivo dashboard for venues',
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Building on modern foundations</h3>
-      Gain a competitive advantage by incorporating industry leading practices
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">For Restaurants & Venues: Order Smarter, Not Harder</h3>
+      Sivo empowers chefs and managers to take control of their purchasing, reduce manual work, and ensure they always have what they need.
     </Fragment>
 
     <Fragment slot="bg">
@@ -124,72 +156,76 @@ const metadata = {
   <!-- Content Widget **************** -->
 
   <Content
+    tagline="For Suppliers"
+    title="For Suppliers & Wholesalers: Grow Your Business, Effortlessly"
     isAfterContent
     items={[
       {
-        title: 'High level of customization',
-        description: `Tailor the template effortlessly to match your brand's identity and requirements, making your website distinct and saving you time.`,
+        title: 'Digital Catalogs',
+        description: `Showcase your products with rich details, images, and real-time availability.`,
       },
       {
-        title: 'Multiple layout possibilities',
-        description:
-          'Explore various layout options to find the structure that best presents your content, enhancing user engagement and navigation.',
+        title: 'Instant Order Reception',
+        description: 'Get all your orders in one organized dashboard. No more missed calls or messy email chains.',
       },
       {
-        title: 'Fully responsive design',
+        title: 'Direct Client Communication',
         description:
-          "Ensure your website's optimal performance on various devices and screen sizes, providing a consistent and enjoyable user experience.",
+          'Communicate directly with your venues for order updates, promotions, and quick query resolution.',
       },
       {
-        title: 'Integration of media',
+        title: 'Analytics & Reporting',
         description:
-          'Seamlessly incorporate images, videos, and multimedia elements that enhance your content and engage visitors effectively.',
+          'Track sales, understand customer demand, and identify growth opportunities with powerful analytics.',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
-      alt: 'Blueprint Image',
+      src: '~/assets/images/sivo-supplier-dashboard.png', // Suggestion: Replace with an image of a supplier dashboard
+      alt: 'Sivo dashboard for suppliers',
     }}
+    classes={{ headline: { title: 'dark:text-white' } }}
   >
-    <Fragment slot="content">Ensure your online presence truly represents you.</Fragment>
+    <Fragment slot="content">Attract more venues, streamline your operations, and manage your wholesale business with ease.</Fragment>
 
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </Content>
 
-  <!-- Content Widget **************** -->
+  <!-- Content Widget - The Sivo Advantage (Optional, can be removed if too much) -->
 
   <Content
     isReversed
     isAfterContent
+    tagline="The Sivo Advantage"
+    title="Built for the Speed of Your Business"
     items={[
       {
-        title: 'Enhanced user engagement',
+        title: 'Data-Driven Insights',
         description:
-          'Captivate your audience with interactive elements, intuitive navigation, and visually appealing layouts, encouraging longer visits.',
+          'Make informed purchasing and sales decisions with comprehensive analytics.',
       },
       {
-        title: 'Continuous improvement',
+        title: 'Reduced Errors & Waste',
         description:
-          'Ensure your website stays aligned with the latest trends and technologies through regular updates and enhancements.',
+          'Digital orders mean fewer mistakes. Better inventory visibility helps reduce spoilage and overstocking.',
       },
       {
-        title: 'Time and resource efficiency',
+        title: 'Mobile-First Design',
         description:
-          'Skip the time-consuming process of building a website from scratch and launch your online presence sooner with AstroWind.',
+          'Manage your orders on the go, whether you are in the kitchen, warehouse, or on the road.',
       },
       {
-        title: 'Community support',
-        description: `Join the growing AstroWind community for insights, resources, and assistance, ensuring you're never alone on your web development journey.`,
+        title: 'Dedicated Support',
+        description: `Our team is committed to your success. We provide onboarding and ongoing support.`,
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Astronauts Image',
+      src: '~/assets/images/sivo-advantage-graphic.png', // Suggestion: Replace with an abstract graphic or team photo
+      alt: 'Sivo platform benefits',
     }}
   >
-    <Fragment slot="content">Designed to foster growth and success.</Fragment>
+    <Fragment slot="content">Sivo is more than just an ordering tool; it's your partner in growth.</Fragment>
 
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
@@ -199,162 +235,96 @@ const metadata = {
   <!-- Steps Widget ****************** -->
 
   <Steps
-    title="Get your dream website up and running in no time with AstroWind."
+    title="Getting Started with Sivo is Simple"
     items={[
       {
-        title: 'Step 1: <span class="font-medium">Download</span>',
+        title: 'Step 1: <span class="font-medium">Sign Up</span>',
         description:
-          "Kickstart with GitHub! Either fork the AstroWind template or simply click 'Use this template'. Your canvas awaits, ready for your digital masterpiece. In just a few clicks, you've already set the foundation.",
-        icon: 'tabler:package',
+          "Request a personalized demo or create your Sivo account as a venue or supplier in just a few minutes.",
+        icon: 'tabler:user-plus',
       },
       {
-        title: 'Step 2: <span class="font-medium">Add content</span>',
+        title: 'Step 2: <span class="font-medium">Connect & Setup</span>',
         description:
-          "Pour your vision into it. Add images, text, and all that jazz to breathe life into your digital space. Remember, it's the content that tells your story, so make it captivating.",
-        icon: 'tabler:letter-case',
+          "Venues: Connect with your existing suppliers or invite new ones. Suppliers: Easily set up your digital catalog and invite your customers.",
+        icon: 'tabler:plug-connected',
       },
       {
-        title: 'Step 3: <span class="font-medium">Customize styles</span>',
+        title: 'Step 3: <span class="font-medium">Start Ordering</span>',
         description:
-          'Give it your personal touch. Tailor colors, fonts, and layouts until it feels just right. Your unique flair, amplified by AstroWind! Precision in design ensures a seamless user experience.',
-        icon: 'tabler:paint',
+          'Experience the simplicity of placing and receiving orders through Sivo. Say goodbye to outdated, manual processes.',
+        icon: 'tabler:shopping-cart-check',
       },
       {
-        title: 'Ready!',
+        title: 'Ready to Optimize!',
+        description: 'Leverage Sivo’s insights and features to save time, reduce costs, and grow your business.',
         icon: 'tabler:check',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
-      alt: 'Steps image',
+      src: '~/assets/images/sivo-onboarding-collage.png', // Suggestion: Replace with a clean, professional image, perhaps a collage of the app in use.
+      alt: 'Sivo onboarding process',
     }}
   />
-
-  <!-- Features2 Widget ************** -->
-
-  <Features2
-    title="Most used widgets"
-    subtitle="Provides frequently used components for building websites using Tailwind CSS"
-    tagline="Components"
-    items={[
-      {
-        title: 'Headers',
-        description: "Ever tried driving without GPS? Boom! That's why websites need headers for direction.",
-        icon: 'flat-color-icons:template',
-      },
-      {
-        title: 'Heros',
-        description:
-          "Picture a superhero landing – epic, right? That's the job of a Hero section, making grand entrances!",
-        icon: 'flat-color-icons:gallery',
-      },
-      {
-        title: 'Features',
-        description:
-          'Where websites strut their stuff and show off superpowers. No holding back on the bragging rights here!',
-        icon: 'flat-color-icons:approval',
-      },
-      {
-        title: 'Content',
-        description:
-          "Dive into the meat and potatoes of a site; without it, you'd just be window shopping. Content is king.",
-        icon: 'flat-color-icons:document',
-      },
-      {
-        title: 'Call-to-Action',
-        description:
-          'That enthusiastic friend who\'s always urging, "Do it! Do it!"? Yeah, that\'s this button nudging you towards adventure.',
-        icon: 'flat-color-icons:advertising',
-      },
-      {
-        title: 'Pricing',
-        description: 'Behold the dessert menu of the website world. Tempting choices await, can you resist?',
-        icon: 'flat-color-icons:currency-exchange',
-      },
-      {
-        title: 'Testimonial',
-        description: 'Step into the gossip corner! Here, other visitors spill the beans and share the juicy details.',
-        icon: 'flat-color-icons:voice-presentation',
-      },
-      {
-        title: 'Contact',
-        description:
-          'Like a digital mailbox, but faster! Drop a line, ask a question, or send a virtual high-five. Ding! Message in.',
-        icon: 'flat-color-icons:business-contact',
-      },
-      {
-        title: 'Footers',
-        description: "The footer's like the credits of a movie but sprinkled with easter eggs. Time to hunt!",
-        icon: 'flat-color-icons:database',
-      },
-    ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Features2>
 
   <!-- HighlightedPosts Widget ******* -->
 
   <BlogLatestPosts
-    title="Find out more content in our Blog"
-    information={`The blog is used to display AstroWind documentation.
-                        Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.
-                        Astro is a very interesting technology. Thanks.
-                `}
+    title="Insights & News from Sivo"
+    information={`Stay updated with the latest trends in food tech, tips for wholesale ordering, and Sivo platform news.`}
   />
 
   <!-- FAQs Widget ******************* -->
 
   <FAQs
     title="Frequently Asked Questions"
-    subtitle="Dive into the following questions to gain insights into the powerful features that AstroWind offers and how it can elevate your web development journey."
+    subtitle="Find answers to common questions about our B2B ordering platform."
     tagline="FAQs"
     classes={{ container: 'max-w-6xl' }}
     items={[
       {
-        title: 'Why AstroWind?',
+        title: 'What is Sivo?',
         description:
-          "Michael Knight a young loner on a crusade to champion the cause of the innocent. The helpless. The powerless in a world of criminals who operate above the law. Here he comes Here comes Speed Racer. He's a demon on wheels.",
+          "Sivo is a B2B ordering platform designed to simplify communication and transactions between food and beverage venues (like restaurants, cafes, bars) and their suppliers.",
       },
       {
-        title: 'What do I need to start?',
+        title: 'Who is Sivo for?',
         description:
-          'Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds. Many say exploration is part of our destiny, but it’s actually our duty to future generations.',
+          'Sivo is for any F&B venue that orders from wholesale suppliers, and for any supplier, distributor, or producer that sells to these venues.',
       },
       {
-        title: 'How to install the Astro + Tailwind CSS template?',
+        title: 'How does Sivo save me time and money?',
         description:
-          "Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows.",
+          "Sivo digitizes your ordering process, which reduces manual errors, saves hours of administrative work, helps manage inventory better (reducing waste), and centralizes communication, all leading to cost savings.",
       },
       {
-        title: "What's something that you don't understand?",
+        title: 'Is my data secure with Sivo?',
         description:
-          "A flower in my garden, a mystery in my panties. Heart attack never stopped old Big Bear. I didn't even know we were calling him Big Bear.",
+          "Absolutely. We use industry-standard security measures and encryption to ensure your business data is safe and confidential.",
       },
       {
-        title: 'What is something that you would like to try again?',
+        title: 'How do I get started with Sivo?',
         description:
-          "A business big enough that it could be listed on the NASDAQ goes belly up. Disappears! It ceases to exist without me. No, you clearly don't know who you're talking to, so let me clue you in.",
+          "It's easy! Click 'Request a Demo' on our website. Our team will reach out to understand your needs and guide you through a quick onboarding.",
       },
       {
-        title: 'If you could only ask one question to each person you meet, what would that question be?',
+        title: 'What are the pricing plans for Sivo?',
         description:
-          "This is not about revenge. This is about justice. A lot of things can change in twelve years, Admiral. Well, that's certainly good to know. About four years. I got tired of hearing how young I looked.",
+          "Sivo offers flexible pricing plans tailored to the needs of different sizes of venues and suppliers. Please visit our Pricing page or contact our sales team for detailed information.",
       },
     ]}
   />
 
   <!-- Stats Widget ****************** -->
-
   <Stats
     stats={[
-      { title: 'Downloads', amount: '132K' },
-      { title: 'Stars', amount: '24.8K' },
-      { title: 'Forks', amount: '10.3K' },
-      { title: 'Users', amount: '48.4K' },
+      { title: 'Happy Venues', amount: '500+' },
+      { title: 'Trusted Suppliers', amount: '200+' },
+      { title: 'Orders Streamlined', amount: '1M+' },
+      { title: 'Hours Saved Monthly', amount: '2,500+' },
     ]}
   />
+
 
   <!-- CallToAction Widget *********** -->
 
@@ -362,20 +332,19 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/onwidget/astrowind',
-        target: '_blank',
-        icon: 'tabler:download',
+        text: 'Request a Demo',
+        href: '/contact?demo=true',
+        icon: 'tabler:arrow-right',
       },
     ]}
   >
     <Fragment slot="title">
-      Astro&nbsp;+&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span>
+      Ready to Revolutionize Your Ordering?
     </Fragment>
 
     <Fragment slot="subtitle">
-      Be very surprised by these huge fake numbers you are seeing on this page. <br class="hidden md:inline" />Don't
-      waste more time! :P
+      Join Sivo today and experience the future of wholesale procurement.
+      <br class="hidden md:inline" />Focus on what you do best, let Sivo handle the rest.
     </Fragment>
   </CallToAction>
 </Layout>

@@ -5,7 +5,7 @@ import ContactUs from '~/components/widgets/Contact.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 
 const metadata = {
-  title: 'Contact',
+  title: 'Contact Sivo | Get in Touch',
 };
 ---
 
@@ -13,21 +13,27 @@ const metadata = {
   <!-- HeroText Widget ******************* -->
 
   <HeroText tagline="Contact" title="Let's Connect!" />
+  <HeroText tagline="Contact Sivo" title="Get in Touch With Our Team" />
 
   <ContactUs
     id="form"
     title="Drop us a message today!"
-    subtitle="For quicker answers, explore our FAQs section. You may find the solution you're looking  for right there! If not, our support team is delighted to help you."
+    subtitle="Whether you're a venue looking to streamline ordering, a supplier wanting to expand your reach, or just have a question about Sivo, we're here to help. Fill out the form below, and we'll get back to you shortly."
     inputs={[
       {
         type: 'text',
         name: 'name',
-        label: 'Name',
+        label: 'Full Name',
       },
       {
         type: 'email',
         name: 'email',
         label: 'Email',
+      },
+      {
+        type: 'text',
+        name: 'company_name',
+        label: 'Company Name',
       },
     ]}
     textarea={{
@@ -41,23 +47,28 @@ const metadata = {
   />
 
   <!-- Features2 Widget ************** -->
-
   <Features2
     title="We are here to help!"
+    title="Other Ways to Reach Sivo"
+    subtitle="We're always happy to connect and answer your questions."
+    columns={3}
     items={[
       {
-        title: 'General support',
-        description: `Chat with us for inquiries related to account management, website navigation, payment issues, accessing purchased templates or general questions about the website's functionality.`,
+        title: 'Sales Inquiries',
+        description: `Interested in a demo or learning more about our plans for venues or suppliers? <br> sales@sivo.com`, // Replace with actual email
+        icon: 'tabler:mail',
       },
       {
-        title: 'Contact sales',
+        title: 'Customer Support',
         description:
-          'Chat with us for questions about purchases, customization options, licensing for commercial use, inquiries about specific template, etc.',
+          'Are you an existing Sivo customer needing assistance? <br> support@sivo.com', // Replace with actual email
+        icon: 'tabler:headset',
       },
       {
-        title: 'Technical support',
+        title: 'General Questions',
         description:
-          'Chat with us when facing issues like template installation, problems editing difficulties, compatibility issues with software or download errors, or other technical challenges related to using the templates.',
+          'For partnerships, media inquiries, or other general questions. <br> info@sivo.com', // Replace with actual email
+        icon: 'tabler:info-circle',
       },
       {
         title: 'Phone',
@@ -65,14 +76,9 @@ const metadata = {
         icon: 'tabler:headset',
       },
       {
-        title: 'Email',
-        description: 'contact@support.com',
-        icon: 'tabler:mail',
-      },
-      {
-        title: 'Location',
-        description: '1234 Lorem Ipsum St, 12345, Miami, EEUU',
-        icon: 'tabler:map-pin',
+        title: 'Our Office',
+        description: '123 Sivo Avenue, Tech Hub City, ST 98765', // Replace with actual address
+        icon: 'tabler:building-community',
       },
     ]}
   />
